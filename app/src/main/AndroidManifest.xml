@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.movie_app">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -11,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Movie_app">
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.PlayerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
