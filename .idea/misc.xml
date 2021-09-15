@@ -3,6 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidProjectsTut/green_apple_movie_app/app/src/main/res/drawable-xxxhdpi/button_see_all.xml" value="0.31666666666666665" />
+        <entry key="..\:/AndroidProjectsTut/green_apple_movie_app/app/src/main/res/drawable-xxxhdpi/button_tickets.xml" value="0.31666666666666665" />
+        <entry key="..\:/AndroidProjectsTut/green_apple_movie_app/app/src/main/res/drawable-xxxhdpi/color_transparent.xml" value="0.31666666666666665" />
+        <entry key="..\:/AndroidProjectsTut/green_apple_movie_app/app/src/main/res/drawable-xxxhdpi/ic_baseline_arrow_back_ios_new_24.xml" value="0.22135416666666666" />
+        <entry key="..\:/AndroidProjectsTut/green_apple_movie_app/app/src/main/res/drawable-xxxhdpi/ic_baseline_play_circle_outline_24.xml" value="0.31666666666666665" />
+        <entry key="..\:/AndroidProjectsTut/green_apple_movie_app/app/src/main/res/drawable-xxxhdpi/ic_bookmark.xml" value="0.22135416666666666" />
+        <entry key="..\:/AndroidProjectsTut/green_apple_movie_app/app/src/main/res/drawable/gradient.xml" value="0.31666666666666665" />
+        <entry key="..\:/AndroidProjectsTut/green_apple_movie_app/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/AndroidProjectsTut/green_apple_movie_app/app/src/main/res/layout/activity_player.xml" value="0.264" />
+        <entry key="..\:/AndroidProjectsTut/green_apple_movie_app/app/src/main/res/layout/item_movie.xml" value="0.36367753623188404" />
+        <entry key="..\:/AndroidProjectsTut/green_apple_movie_app/app/src/main/res/layout/item_movie_funny.xml" value="0.36367753623188404" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/movie_app/app/src/main/res/drawable-hdpi/ic_imdb.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/movie_app/app/src/main/res/drawable/ic_baseline_arrow_circle_down_24.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/movie_app/app/src/main/res/drawable/ic_baseline_sentiment_satisfied_alt_24.xml" value="0.21666666666666667" />

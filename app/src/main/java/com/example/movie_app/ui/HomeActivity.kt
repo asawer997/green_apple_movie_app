@@ -2,12 +2,9 @@ package com.example.movie_app.ui
 
 import android.util.Log
 import android.view.LayoutInflater
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.movie_app.data.Feed
 import com.example.movie_app.data.Movie
 import com.example.movie_app.databinding.ActivityMainBinding
 import com.example.movie_app.ui.adapter.FunnyAdapter
-import com.example.movie_app.ui.adapter.MovieAdapter
 import com.example.movie_app.util.Constant
 import com.google.gson.GsonBuilder
 import okhttp3.*
@@ -16,7 +13,6 @@ import java.util.*
 
 class HomeActivity : BaseActivity<ActivityMainBinding>() {
     //type the content after make override
-    private lateinit var linearLayoutManager: LinearLayoutManager
 
     override val LOG_TAG: String = "HOME_ACTIVITY"
     private val client= OkHttpClient()
@@ -34,8 +30,6 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     override fun addCallbacks() {
-        linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false)
-        binding?.movieRecycler?.layoutManager = linearLayoutManager
     }
 
 
@@ -62,14 +56,8 @@ private fun makeRequest() {
                     binding?.apply {
 //                       test.text=result.feed.joinToString { it.description }
 
-                        movieRecycler.apply {
-                            adapter = MovieAdapter(result, this@HomeActivity)
-                            setHasFixedSize(true)
-                    }
-                        funnyRecycler.apply {
-                            adapter = FunnyAdapter(result, this@HomeActivity)
-                            setHasFixedSize(true)
-                        }
+                        funnyRecycler.adapter = FunnyAdapter(result, this@HomeActivity)
+
 
 
                     }
