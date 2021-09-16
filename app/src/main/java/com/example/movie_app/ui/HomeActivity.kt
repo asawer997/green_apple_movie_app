@@ -4,7 +4,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import com.example.movie_app.data.Movie
 import com.example.movie_app.databinding.ActivityMainBinding
-import com.example.movie_app.ui.adapter.FunnyAdapter
+import com.example.movie_app.ui.adapter.MovieAdapter
 import com.example.movie_app.util.Constant
 import com.google.gson.GsonBuilder
 import okhttp3.*
@@ -48,7 +48,7 @@ private fun makeRequest() {
 
         override fun onResponse(call: Call, response: Response) {
             val body = response.body?.string()
-            val result = gson.fromJson(body,  Movie::class.java)
+            val result = gson.fromJson(body, Movie::class.java)
 
 
 
@@ -56,7 +56,7 @@ private fun makeRequest() {
                     binding?.apply {
 //                       test.text=result.feed.joinToString { it.description }
 
-                        funnyRecycler.adapter = FunnyAdapter(result, this@HomeActivity)
+                        funnyRecycler.adapter = MovieAdapter(result, this@HomeActivity)
 
 
 

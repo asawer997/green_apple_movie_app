@@ -21,6 +21,11 @@
     </style>
 
 
+    <style name="RatingBar">
+        <item name="colorControlActivated">#DBA900</item>
+        <item name="colorControlNormal">#ffffff</item>
+    </style>
+
     <style name="text_style" parent="">
     <item name="android:fontFamily">sans-serif-medium</item>
     <item name="android:textSize">12sp</item>

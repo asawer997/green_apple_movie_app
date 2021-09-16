@@ -3,14 +3,13 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:padding="8dp"
-    android:layout_marginStart="16dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/poster"
-        android:layout_width="200dp"
-        android:layout_height="300dp"
+        android:layout_width="360dp"
+        android:layout_height="490dp"
         android:scaleType="fitXY"
         android:elevation="1dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,8 +25,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="test"
+        android:layout_marginTop="8dp"
         android:textSize="16sp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/poster"
         app:layout_constraintStart_toStartOf="@id/poster"
           app:layout_constraintBottom_toBottomOf="parent"

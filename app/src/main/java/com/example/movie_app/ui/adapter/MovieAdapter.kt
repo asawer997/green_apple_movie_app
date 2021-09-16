@@ -2,6 +2,7 @@ package com.example.movie_app.ui.adapter
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -11,8 +12,8 @@ import com.example.movie_app.databinding.ItemMovieFunnyBinding
 import com.example.movie_app.ui.PlayerActivity
 import com.example.movie_app.util.Constant
 
-class FunnyAdapter (val movie: Movie, private val context: Context) :
-    RecyclerView.Adapter<FunnyAdapter.MovieViewHolder>() {
+class MovieAdapter (val movie: Movie, private val context: Context) :
+    RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
 
 
@@ -25,6 +26,7 @@ class FunnyAdapter (val movie: Movie, private val context: Context) :
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         val currentItem = movie.feed[position].items[0]
+        Log.i("a",movie.feed.size.toString())
 
         holder.binding!!.apply {
             Glide.with(context).load(currentItem.art).into(poster)
@@ -35,8 +37,16 @@ class FunnyAdapter (val movie: Movie, private val context: Context) :
             val intent = Intent(context, PlayerActivity::class.java)
             intent.apply {
 
-                putExtra(Constant.PLAYER_ACTIVITY,currentItem.url)
+                putExtra(Constant.URL_VIDEO,currentItem.url)
+                putExtra(Constant.TITLE,currentItem.title)
+                putExtra(Constant.ART,currentItem.art)
+                putExtra(Constant.YEAR,currentItem.year)
+                putExtra(Constant.DESCRIPTION,currentItem.description)
+                putExtra(Constant.DIRC,currentItem.director)
+
+
             }
+
             context.startActivity(intent)
         }
     }
