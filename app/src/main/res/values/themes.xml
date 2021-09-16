@@ -15,16 +15,17 @@
     </style>
 
 
-    <style name="Shape_image_circle" parent="">
+    <style name="circleImageView" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">50%</item>
+        <item name="cornerSize">20%</item>
     </style>
 
 
     <style name="text_style" parent="">
     <item name="android:fontFamily">sans-serif-medium</item>
-    <item name="android:textSize">12sp</item>
+    <item name="android:textSize">16sp</item>
     <item name="android:textStyle">bold</item>
+        <item name="android:padding">8dp</item>
     <item name="android:textColor">@color/black</item>
     </style>
 

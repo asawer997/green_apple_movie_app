@@ -2,4 +2,7 @@
     <string name="app_name">movie_app</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hi_movie_fans">Hi Movie Fans</string>
+    <string name="description_of_main_activity">Grab the popcorn \nand enjoy watching the best movies</string>
+    <string name="popular">Popular</string>
 </resources>

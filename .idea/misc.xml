@@ -10,10 +10,13 @@
         <entry key="..\:/Users/hp/AndroidStudioProjects/movie_app/app/src/main/res/layout/fragment_player.xml" value="0.1638888888888889" />
         <entry key="..\:/green_apple_movie_appbb/app/src/main/res/drawable/gradient.xml" value="0.10555555555555556" />
         <entry key="..\:/green_apple_movie_appbb/app/src/main/res/drawable/ic_amnah_backgound.xml" value="0.2203125" />
-        <entry key="..\:/green_apple_movie_appbb/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/green_apple_movie_appbb/app/src/main/res/drawable/ic_apple_logo.xml" value="0.2203125" />
+        <entry key="..\:/green_apple_movie_appbb/app/src/main/res/drawable/ic_search.xml" value="0.2203125" />
+        <entry key="..\:/green_apple_movie_appbb/app/src/main/res/drawable/poster_shawow.xml" value="0.1037037037037037" />
+        <entry key="..\:/green_apple_movie_appbb/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/green_apple_movie_appbb/app/src/main/res/layout/activity_player.xml" value="0.20416666666666666" />
         <entry key="..\:/green_apple_movie_appbb/app/src/main/res/layout/fragment_player.xml" value="0.20416666666666666" />
-        <entry key="..\:/green_apple_movie_appbb/app/src/main/res/layout/item_movie_funny.xml" value="0.20416666666666666" />
+        <entry key="..\:/green_apple_movie_appbb/app/src/main/res/layout/item_movie_funny.xml" value="0.33" />
       </map>
     </option>
   </component>
