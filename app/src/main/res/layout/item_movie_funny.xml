@@ -62,9 +62,10 @@
             tools:text="The sound of Music" />
 
         <TextView
+            android:id="@+id/type_movie"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="in 2020"
+            android:text="historical"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="@+id/title"
             app:layout_constraintHorizontal_bias="0.09"

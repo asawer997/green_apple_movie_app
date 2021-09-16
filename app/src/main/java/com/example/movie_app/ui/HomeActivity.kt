@@ -58,8 +58,6 @@ private fun makeRequest() {
 
                         funnyRecycler.adapter = FunnyAdapter(result, this@HomeActivity)
 
-
-
                     }
             }
         }

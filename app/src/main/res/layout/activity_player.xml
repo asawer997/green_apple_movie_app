@@ -8,174 +8,335 @@
     tools:context=".ui.PlayerActivity">
 
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="@drawable/img1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:background="@drawable/ic_baseline_play_circle_outline_24"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toStartOf="@+id/ic_bookmark"
-        app:layout_constraintStart_toEndOf="@+id/ic_move_back"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/ic_move_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/ic_baseline_arrow_back_ios_new_24"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/ic_bookmark"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/ic_bookmark"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/ic_move_back"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ic_move_back" />
-
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_movie_image"
-        android:layout_width="100dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="270dp"
-        android:paddingStart="10dp"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="8dp"
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:alpha="0.9"
+        app:cardCornerRadius="8dp"
+        app:contentPadding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ic_move_back">
+        app:layout_constraintTop_toBottomOf="@+id/exo_player"
+        app:layout_constraintVertical_bias="0.060000002">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/img" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp"
+                android:text="1902"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/director" />
+
+            <TextView
+                android:id="@+id/director"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="8dp"
+                android:text="Director: Georges Méliès"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/about" />
+
+            <TextView
+                android:id="@+id/about"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="A group of astronomers go on an expedition to the Moon."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/poster_image" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/poster_image"
+                android:layout_width="64dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/img"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/circleImageView" />
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/text_style"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="The sound of Music"
+                app:layout_constraintBottom_toBottomOf="@+id/poster_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/poster_image"
+                app:layout_constraintTop_toTopOf="@+id/poster_image" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toEndOf="@+id/title"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_like" />
+
+            <TextView
+                android:id="@+id/duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="70K"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/title"
+                app:layout_constraintEnd_toEndOf="@+id/imageView"
+                app:layout_constraintStart_toStartOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/title"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                app:srcCompat="@drawable/ic_imdb" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-    <View
-        android:id="@+id/view2"
+    <com.google.android.exoplayer2.video.VideoDecoderGLSurfaceView
+        android:id="@+id/exo_player"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/color_transparent"
-        app:layout_constraintEnd_toEndOf="@+id/text_movie_name"
-        app:layout_constraintStart_toStartOf="@+id/text_movie_name"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <TextView
-        android:id="@+id/text_movie_name"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="SAW VI"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:layout_height="350dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/card_movie_image"
-        app:layout_constraintTop_toTopOf="@+id/card_movie_image" />
-
-
-    <TextView
-        android:id="@+id/text_movies_category"
-        android:layout_width="250dp"
-        android:layout_height="20dp"
-        android:gravity="center"
-        android:text="Horror/Mystery  * 2 hours"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/card_movie_image"
-        app:layout_constraintEnd_toEndOf="@+id/text_movie_name"
-        app:layout_constraintStart_toStartOf="@+id/text_movie_name"
-        app:layout_constraintTop_toBottomOf="@+id/text_movie_name"
-        app:layout_constraintVertical_bias="0.2" />
-
-    <TextView
-        android:id="@+id/text_movies_desc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:lineHeight="32dp"
-        android:text="Saw II is a 2005 horror film directed by Darren Lynn Bousman and written by Leigh Whannell and Bousman. It is the sequel to 2004\'s Saw and the second installment in the Saw film series"
-        android:textColor="@color/white"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/card_movie_image"
-        app:layout_constraintTop_toBottomOf="@+id/card_movie_image" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_buy_tickets"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="68dp"
-        android:alpha="0.3"
-        android:background="@drawable/button_tickets"
-        android:text="source code"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_movies_desc" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="2dp"
-        android:layout_marginHorizontal="8dp"
-        android:alpha="0.2"
-        android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/button_buy_tickets"
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="19dp"
+        android:layout_height="27dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button_buy_tickets"
-        app:layout_constraintTop_toTopOf="@+id/button_buy_tickets" />
-
-    <View
-        android:layout_width="0dp"
-        android:layout_height="2dp"
-        android:layout_marginHorizontal="8dp"
-        android:alpha="0.2"
-        android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/button_buy_tickets"
-        app:layout_constraintEnd_toStartOf="@+id/button_buy_tickets"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button_buy_tickets" />
-
+        app:layout_constraintTop_toTopOf="@+id/imageView4"
+        app:srcCompat="@drawable/ic_aspect"
+        app:tint="@color/white" />
 
     <TextView
-        android:id="@+id/text_screenshot"
+        android:id="@+id/source_code_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="10dp"
-        android:text="Screenshots"
+        android:background="@drawable/source_code_shape"
+        android:text="Go To The Source Code"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
         android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/button_buy_tickets"
-        app:layout_constraintHorizontal_bias="0.062"
-        app:layout_constraintStart_toStartOf="@+id/text_movies_desc"
-        app:layout_constraintTop_toBottomOf="@+id/button_buy_tickets" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_back"
+        app:tint="@color/white" />
+
+
+    <!--    <View-->
+<!--        android:id="@+id/view"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="250dp"-->
+<!--        android:background="@drawable/img1"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:layout_width="70dp"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:background="@drawable/ic_baseline_play_circle_outline_24"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/view"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/ic_bookmark"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/ic_move_back"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/ic_move_back"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:layout_marginTop="28dp"-->
+<!--        android:background="@drawable/ic_baseline_arrow_back_ios_new_24"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="30sp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/ic_bookmark"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_marginEnd="24dp"-->
+<!--        android:background="@drawable/ic_bookmark"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="30sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/ic_move_back"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/ic_move_back" />-->
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/card_movie_image"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="150dp"-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        android:layout_marginEnd="270dp"-->
+<!--        android:paddingStart="10dp"-->
+<!--        app:cardCornerRadius="10dp"-->
+<!--        app:cardElevation="8dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/ic_move_back">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/img" />-->
+<!--    </androidx.cardview.widget.CardView>-->
+
+<!--    <View-->
+<!--        android:id="@+id/view2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:background="@drawable/color_transparent"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/text_movie_name"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/text_movie_name"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/imageView" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/text_movie_name"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:gravity="center"-->
+<!--        android:text="SAW VI"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="24sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/card_movie_image"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/card_movie_image" />-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/text_movies_category"-->
+<!--        android:layout_width="250dp"-->
+<!--        android:layout_height="20dp"-->
+<!--        android:gravity="center"-->
+<!--        android:text="Horror/Mystery  * 2 hours"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="14sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/card_movie_image"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/text_movie_name"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/text_movie_name"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/text_movie_name"-->
+<!--        app:layout_constraintVertical_bias="0.2" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/text_movies_desc"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        android:lineHeight="32dp"-->
+<!--        android:text="Saw II is a 2005 horror film directed by Darren Lynn Bousman and written by Leigh Whannell and Bousman. It is the sequel to 2004\'s Saw and the second installment in the Saw film series"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="12sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/card_movie_image"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/card_movie_image" />-->
+
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:id="@+id/button_buy_tickets"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_marginTop="68dp"-->
+<!--        android:alpha="0.3"-->
+<!--        android:background="@drawable/button_tickets"-->
+<!--        android:text="source code"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.54"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/text_movies_desc" />-->
+
+<!--    <View-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="2dp"-->
+<!--        android:layout_marginHorizontal="8dp"-->
+<!--        android:alpha="0.2"-->
+<!--        android:background="@color/white"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/button_buy_tickets"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/button_buy_tickets"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/button_buy_tickets" />-->
+
+<!--    <View-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="2dp"-->
+<!--        android:layout_marginHorizontal="8dp"-->
+<!--        android:alpha="0.2"-->
+<!--        android:background="@color/white"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/button_buy_tickets"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/button_buy_tickets"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/button_buy_tickets" />-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/text_screenshot"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:text="Screenshots"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/button_buy_tickets"-->
+<!--        app:layout_constraintHorizontal_bias="0.062"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/text_movies_desc"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/button_buy_tickets" />-->
 
 
 
