@@ -9,7 +9,7 @@
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/poster"
         android:layout_width="360dp"
-        android:layout_height="490dp"
+        android:layout_height="510dp"
         android:scaleType="fitXY"
         android:elevation="1dp"
         app:layout_constraintEnd_toEndOf="parent"
