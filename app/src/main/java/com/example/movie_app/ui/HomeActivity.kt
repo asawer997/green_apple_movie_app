@@ -2,6 +2,7 @@ package com.example.movie_app.ui
 
 import android.util.Log
 import android.view.LayoutInflater
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.movie_app.data.Movie
 import com.example.movie_app.databinding.ActivityMainBinding
 import com.example.movie_app.ui.adapter.MovieAdapter
@@ -17,6 +18,8 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
     override val LOG_TAG: String = "HOME_ACTIVITY"
     private val client= OkHttpClient()
     private val gson = GsonBuilder().create()
+    private lateinit var linearLayoutManager: LinearLayoutManager
+
 
 
     override val bindingInflater: (LayoutInflater) -> ActivityMainBinding =
@@ -26,10 +29,12 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
 
         makeRequest()
 
-
+        linearLayoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        binding?.funnyRecycler?.layoutManager = linearLayoutManager
     }
 
     override fun addCallbacks() {
+
     }
 
 
@@ -55,8 +60,10 @@ private fun makeRequest() {
                 runOnUiThread{
                     binding?.apply {
 //                       test.text=result.feed.joinToString { it.description }
-
-                        funnyRecycler.adapter = MovieAdapter(result, this@HomeActivity)
+                      funnyRecycler.apply {
+                            adapter = MovieAdapter(result, this@HomeActivity)
+                            setHasFixedSize(true)
+                        }
 
 
 
