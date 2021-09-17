@@ -12,7 +12,7 @@ import com.example.movie_app.databinding.ItemMovieFunnyBinding
 import com.example.movie_app.ui.PlayerActivity
 import com.example.movie_app.util.Constant
 
-class MovieAdapter (val movie: Movie, private val context: Context) :
+class MovieAdapter (private val movie: Movie, private val context: Context) :
     RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
 
@@ -37,16 +37,14 @@ class MovieAdapter (val movie: Movie, private val context: Context) :
             val intent = Intent(context, PlayerActivity::class.java)
             intent.apply {
 
-                putExtra(Constant.URL_VIDEO,currentItem.url)
-                putExtra(Constant.TITLE,currentItem.title)
-                putExtra(Constant.ART,currentItem.art)
-                putExtra(Constant.YEAR,currentItem.year)
-                putExtra(Constant.DESCRIPTION,currentItem.description)
-                putExtra(Constant.DIRC,currentItem.director)
-
-
+                putExtra(Constant.URL_VIDEO, currentItem.url)
+                putExtra(Constant.TITLE_VIDEO, currentItem.title)
+                putExtra(Constant.YEAR_VIDEO, currentItem.year)
+                putExtra(Constant.DIRECTOR_VIDEO, currentItem.director)
+                putExtra(Constant.DESCRIPTION_VIDEO, currentItem.description)
+                putExtra(Constant.ART_POSTER, currentItem.art)
+                putExtra(Constant.DURATION,currentItem.duration)
             }
-
             context.startActivity(intent)
         }
     }

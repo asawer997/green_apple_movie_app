@@ -2,14 +2,13 @@ package com.example.movie_app.util
 
 object Constant {
     const val URL="https://raw.githubusercontent.com/Bareq-altaamah/mock/main/classic.json"
-    const val URL_VIDEO="video"
-    const val YEAR="year"
-    const val DESCRIPTION="description"
-    const val ART="art"
-    const val DIRC="dirc"
-
-
-    const val TITLE="title"
+    const val URL_VIDEO = "urlVideo"
+    const val TITLE_VIDEO = "titleVideo"
+    const val YEAR_VIDEO = "yearVideo"
+    const val DIRECTOR_VIDEO = "directorVideo"
+    const val DESCRIPTION_VIDEO = "descriptionVideo"
+    const val ART_POSTER = "artVideo"
+    const val DURATION = "durationVideo"
 
 
 }
