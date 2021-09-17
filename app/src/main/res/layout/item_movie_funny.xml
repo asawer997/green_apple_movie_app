@@ -20,6 +20,7 @@
             android:elevation="8dp"
             android:scaleType="fitXY"
             android:alpha="0.9"
+            android:transitionName="movie_transition"
             android:src="@drawable/ic_apple_logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
