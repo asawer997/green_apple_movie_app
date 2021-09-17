@@ -4,33 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_background"
+    android:background="@color/black"
     tools:context=".ui.PlayerActivity">
 
-
-    <com.google.android.exoplayer2.ui.PlayerView
-        android:id="@+id/exo_player"
-        android:layout_width="match_parent"
-        android:layout_height="295dp"
-        android:elevation="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="match_parent"
         android:scaleType="fitXY"
         android:src="@drawable/img1"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/exo_player" />
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/start"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/ic_baseline_play_circle_outline_24"
+        app:layout_constraintBottom_toTopOf="@+id/text_movies_desc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/ic_move_back"
@@ -41,111 +37,98 @@
         android:background="@drawable/ic_baseline_arrow_back_ios_new_24"
         android:textColor="@color/black"
         android:textSize="30sp"
-        android:elevation="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 
     <View
         android:id="@+id/view2"
         android:layout_width="match_parent"
         android:layout_height="380dp"
-        android:layout_marginBottom="4dp"
         android:background="@drawable/color_transparent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/text_movie_name"
+        app:layout_constraintStart_toStartOf="@+id/text_movie_name" />
+    <ImageView
+        android:id="@+id/ic_bookmark"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/ic_bookmark"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/text_movies_desc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_movies_category"
+        app:layout_constraintTop_toTopOf="@+id/text_movie_name" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RatingBar
+        android:id="@+id/film_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="#00FFFEFB"
+        android:layout_marginStart="16dp"
+
+        android:numStars="5"
+        android:rating="3"
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        android:theme="@style/RatingBar"
+        android:transformPivotX="10dp"
+        android:transformPivotY="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/text_movies_desc"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/text_movie_name"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:text="SAW VI"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/text_movies_category"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/text_movies_category"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+
+        android:text="Horror/Mystery  * 2 hours"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@id/film_rating"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/text_movies_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@id/view2"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="sans-serif-medium"
+        android:lineHeight="32dp"
+        android:padding="8dp"
+        android:text="Saw II is a 2005 horror film directed by Darren Lynn Bousman and written by Leigh Whannell and Bousman. It is the sequel to 2004\'s Saw and the second installment in the Saw film series"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/view2">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/duration"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="70K"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/text_movies_desc"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ic_bookmark"
-            app:layout_constraintTop_toTopOf="@+id/ic_bookmark"
-            app:layout_constraintVertical_bias="0.0" />
 
-        <ImageView
-            android:id="@+id/ic_bookmark"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginEnd="24dp"
-            android:src="@drawable/ic_bookmark"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toTopOf="@+id/text_movies_desc"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/text_movies_category"
-            app:layout_constraintTop_toTopOf="@+id/text_movie_name" />
 
-        <RatingBar
-            android:id="@+id/film_rating"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:background="#00FFFEFB"
-            android:layout_marginStart="16dp"
 
-            android:numStars="5"
-            android:rating="3"
-            android:scaleX="0.5"
-            android:scaleY="0.5"
-            android:theme="@style/RatingBar"
-            android:transformPivotX="10dp"
-            android:transformPivotY="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/text_movies_desc"
-            app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/text_movie_name"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="16dp"
-            android:text="SAW VI"
-            android:textColor="@color/white"
-            android:textSize="26sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/text_movies_category"
-            app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/text_movies_category"
-            android:layout_width="250dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="16dp"
 
-            android:text="Horror/Mystery  * 2 hours"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@id/film_rating"
-            app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/text_movies_desc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="32dp"
-            android:fontFamily="sans-serif-medium"
-            android:lineHeight="32dp"
-            android:padding="8dp"
-            android:text="Saw II is a 2005 horror film directed by Darren Lynn Bousman and written by Leigh Whannell and Bousman. It is the sequel to 2004\'s Saw and the second installment in the Saw film series"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

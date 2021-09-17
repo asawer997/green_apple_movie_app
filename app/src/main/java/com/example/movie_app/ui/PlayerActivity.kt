@@ -31,7 +31,6 @@ class PlayerActivity : BaseActivity<ActivityPlayerBinding>() {
 
     @SuppressLint("SetTextI18n")
     override fun setup() {
-        initializeExoPlayer()
 
         getDataOfMovieFromAdapter()
 
@@ -47,7 +46,11 @@ class PlayerActivity : BaseActivity<ActivityPlayerBinding>() {
         val mDirection = intent.getStringExtra(Constant.DIRECTOR_VIDEO).toString()
         val mYear = intent.getIntExtra(Constant.YEAR_VIDEO,0)
         val mTitle = intent.getStringExtra(Constant.TITLE_VIDEO).toString()
-        val mDuration = intent.getIntExtra(Constant.DURATION,0)
+
+
+        val url = intent.getStringExtra(Constant.URL_VIDEO).toString()
+        val intent = Intent(this, VideoActivity::class.java)
+        intent.putExtra(Constant.TITLE_VIDEO, url)
 
 
         binding?.apply {
@@ -56,7 +59,6 @@ class PlayerActivity : BaseActivity<ActivityPlayerBinding>() {
             textMoviesDesc.text = mDescription
             textMoviesCategory.text = " ${mYear }/${mDirection}"
             textMovieName.text = mTitle
-            duration.text = "${mDuration.toString().subSequence(0,2)}K"
 
         }
 
@@ -67,68 +69,13 @@ class PlayerActivity : BaseActivity<ActivityPlayerBinding>() {
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
+        binding?.start?.setOnClickListener {
+            val intent = Intent(this, VideoActivity::class.java)
+            startActivity(intent)}
 
     }
-    private fun initializeExoPlayer() {
-        player = SimpleExoPlayer.Builder(this).build()
-        binding?.exoPlayer?.player = player
-        buildMediaSource().let {
-            player?.setMediaSource(it)
-            player?.prepare()
-        }
-    }
 
-    private fun buildMediaSource(): MediaSource {
-        val videoUrl = intent.getStringExtra(Constant.URL_VIDEO).toString()
-        val dataSourceFactory = DefaultDataSourceFactory(this, "sample")
-        return ProgressiveMediaSource.Factory(dataSourceFactory)
-            .createMediaSource(MediaItem.fromUri(Uri.parse(videoUrl)))
-    }
 
-    override fun onResume() {
-        super.onResume()
-        player?.playWhenReady = true
-    }
-
-    override fun onStop() {
-        super.onStop()
-        player?.playWhenReady = false
-        if (isFinishing) {
-            releasePlayer()
-        }
-    }
-
-    private fun releasePlayer() {
-        player?.release()
-    }
-
-    private fun getPictureInPictureMode() {
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-
-//            val videoDimension = binding?.exoPlayer
-//            val aspectRation = videoDimension?.let { Rational(it.width, videoDimension.height) }
-//            pictureInPictureParams.setAspectRatio(aspectRation).build()
-
-            enterPictureInPictureMode(pictureInPictureParams.build())
-
-        } else {
-            Log.i(LOG_TAG, "Not available for this version")
-        }
-    }
-
-    @SuppressLint("ObsoleteSdkInt")
-    override fun onUserLeaveHint() {
-        super.onUserLeaveHint()
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-
-            if (!isInPictureInPictureMode) {
-                getPictureInPictureMode()
-            } else {
-                Log.i(LOG_TAG, "Not available for this version")
-            }
-        }
-    }
 
 
 }

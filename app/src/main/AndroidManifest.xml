@@ -12,6 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Movie_app">
         <activity
+            android:name=".ui.VideoActivity"
+            android:exported="true"
+            android:label="@string/title_activity_video"
+            android:theme="@style/Theme.Movie_app.NoActionBar" />
+        <activity
             android:name=".ui.PlayerActivity"
             android:exported="true" />
         <activity

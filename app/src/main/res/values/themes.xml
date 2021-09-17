@@ -37,4 +37,10 @@
     <style name="ShapeAppearanceOverlay.App.CornerSize10Percent" parent="">
         <item name="cornerSize">5%</item>
     </style>
+    <style name="Theme.Movie_app.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.Movie_app.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.Movie_app.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
